@@ -2,7 +2,7 @@ import youtube_dl
 import discord
 
 intents = discord.Intents.default()
-client = discrod.Client(intents=intents)
+client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
@@ -26,8 +26,7 @@ async def on_message(message):
 
         url = message.content.split(" ")[1]
         option = {
-            'format': 'bestaudio/best','postprocessors':[{'preferredcodec':'mp3','key':'FFmpegExtraAudio','preferredquality':'320',},'outtmpl':"file/"+url.split('=')[1]+'.mp3'}
-            
+            'outtmpl':"file/"+url.split('=')[1]+".mp3"
             
         }
 
