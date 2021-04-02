@@ -1,5 +1,6 @@
 import youtube_dl
 import discord
+import os
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 
@@ -37,3 +38,4 @@ async def on_message(message):
         
         voice.play(discord.FFmpegPCMAudio("file/" + url.split('=')[1] + ".mp3"))
         await message.channel.send(title + "을 듣는다고? 개버러지네.")
+client.run(os.environ['token'])
